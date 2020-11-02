@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -14,15 +17,21 @@ public class UserVo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
+    @Column(nullable = false)
+    @NotEmpty
+    @Email(message = "{errors.invalid_email}")
+    private String email;
+    @Column(nullable = false)
+    @NotEmpty
+    @Size(min = 8, max = 64)
     private String password;
     private LocalDate regDate;
 
     @ManyToMany
     @JoinTable(
-            name = "users_roles",
+            name = "user_role",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
-    private List<UserRoleVo> roles;
+    private List<RoleVo> roles;
 }
