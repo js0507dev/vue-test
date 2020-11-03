@@ -1,4 +1,4 @@
-package com.sjs.test.User.Domain;
+package com.sjs.test.user.domain;
 
 import lombok.Getter;
 import lombok.Setter;

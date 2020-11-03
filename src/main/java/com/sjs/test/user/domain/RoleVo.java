@@ -1,11 +1,10 @@
-package com.sjs.test.User.Domain;
+package com.sjs.test.user.domain;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import java.util.List;
 
 @Getter
 @Setter

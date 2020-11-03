@@ -1,7 +1,7 @@
 package com.sjs.test.common.service;
 
-import com.sjs.test.User.Domain.UserVo;
-import com.sjs.test.User.Repository.UserRepository;
+import com.sjs.test.user.domain.UserVo;
+import com.sjs.test.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;

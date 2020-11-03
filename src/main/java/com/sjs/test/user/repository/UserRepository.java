@@ -1,6 +1,6 @@
-package com.sjs.test.User.Repository;
+package com.sjs.test.user.repository;
 
-import com.sjs.test.User.Domain.UserVo;
+import com.sjs.test.user.domain.UserVo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

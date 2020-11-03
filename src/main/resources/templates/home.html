@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default}">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <header layout:fragment="header">
+        <h2>Home Header</h2>
+    </header>
+    <section>
+        <nav layout:fragment="nav">
+            네비게이션
+        </nav>
+        <article layout:fragment="content">
+            메인 컨텐츠
+        </article>
+    </section>
+</body>
+</html>

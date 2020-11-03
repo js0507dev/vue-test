@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">layout</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <th:block th:replace="~{fragments/config::config}"/>
+    <script lang="js">
+        window.addEventListener('DOMContentLoaded', async () => {
+
+            if (typeof (fn_initVue) === typeof (Function)) {
+                await fn_initVue();
+            }
+
+            if (typeof (fn_initPopup) === typeof (Function)) {
+                await fn_initPopup();
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <th:block th:replace="~{fragments/component::component}"/>
+    <header layout:fragment="header">
+        <h2>page 1</h2>
+    </header>
+    <section>
+        <nav layout:fragment="nav">
+            <ul>
+                <li><a href="#">page1</a></li>
+                <li><a href="#">page2</a></li>
+            </ul>
+        </nav>
+        <article layout:fragment="content">
+            <h1>Page1</h1>
+            <p>main content</p>
+        </article>
+        <th:block th:replace="~{fragments/popup::popup}"/>
+    </section>
+    <footer layout:fragment="footer">
+        <p>footer</p>
+    </footer>
+</body>
+</html>
