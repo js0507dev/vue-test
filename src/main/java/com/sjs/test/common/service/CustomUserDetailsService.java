@@ -10,12 +10,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
@@ -23,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserVo user = userRepository.findByEmail(username)
-                .orElseThrow(() -> new UsernameNotFoundException("Email "+username+" not found"));
+                .orElseThrow(() -> new UsernameNotFoundException("Email " + username + " not found"));
 
         return new User(user.getEmail(), user.getPassword(), getAuthorities(user));
     }

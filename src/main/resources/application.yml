@@ -3,5 +3,9 @@ spring:
     console:
         enabled: true
         path: /h2-console
+logging:
+    level:
+        org.hibernate.SQL: debug
+        org.hibernate.type: trace
 server:
     port: 3000
