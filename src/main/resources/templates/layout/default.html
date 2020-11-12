@@ -28,12 +28,13 @@
     </header>
     <section class="content">
         <nav class="mainNav" layout:fragment="nav">
+            <a onclick="this.parent.className = 'mainNav hide';">닫기</a>
             <ul>
                 <li><a href="#">page1</a></li>
                 <li><a href="#">page2</a></li>
             </ul>
         </nav>
-        <article layout:fragment="content">
+        <article class="mainArticle" layout:fragment="content">
             <h1>Page1</h1>
             <p>main content</p>
         </article>
